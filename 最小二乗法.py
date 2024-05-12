@@ -12,7 +12,7 @@ def main():
     st.sidebar.title("グラフの設定")
     xlabel = st.sidebar.text_input("横軸の名称","X軸")
     ylabel = st.sidebar.text_input("縦軸の名称","Y軸")
-    showsubmemori = st.sidebar.checkbox("補助目盛りの表示")
+    showsubmemori = st.sidebar.checkbox("補助目盛りの表示",True)
     showsubline = st.sidebar.checkbox("補助目盛り線の表示")
     deletemainline = st.sidebar.checkbox("主目盛の目盛り線の非表示")
 
