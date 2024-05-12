@@ -71,8 +71,8 @@ def main():
             y_values = [start_y, end_y]
             fig, ax = plt.subplots()
             plt.plot(x_values, y_values)
-            plt.xlim(0,max(x_data))
-            plt.ylim(0,max(y_data))  
+            plt.xlim(0,max(x_data)+max(x_data)/10)
+            plt.ylim(0,max(y_data)+max(y_data)/10)  
             plt.xlabel(f'{xlabel}')
             plt.ylabel(f'{ylabel}')
             ax.grid()
