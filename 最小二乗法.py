@@ -1,5 +1,6 @@
 import streamlit as st
 import matplotlib.pyplot as plt
+import japanize_matplotlib 
 
 def main():
     st.title('最小二乗法の計算！')
@@ -7,8 +8,8 @@ def main():
     # データの数を入力するテキストボックスを表示
     data_count = st.text_input('データの数を入力してください', value='3')
     st.sidebar.title("グラフの設定")
-    xlabel = st.sidebar.text_input("横軸の名称")
-    ylabel = st.sidebar.text_input("縦軸の名称")
+    xlabel = st.sidebar.text_input("横軸の名称","X軸")
+    ylabel = st.sidebar.text_input("縦軸の名称","Y軸")
     showsubmemori = st.sidebar.checkbox("補助目盛りの表示")
     showsubline = st.sidebar.checkbox("補助目盛り線の表示")
     deletemainline = st.sidebar.checkbox("主目盛の目盛り線の非表示")
@@ -82,6 +83,7 @@ def main():
             if showsubline:
                 ax.grid(which="minor")
             st.pyplot(fig)
+            
         elif data_count < 3:
             st.write("データ数が不足しています。")
         else:
