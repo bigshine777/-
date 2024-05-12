@@ -2,6 +2,8 @@ import streamlit as st
 import matplotlib.pyplot as plt
 import japanize_matplotlib 
 
+#   streamlit run 最小二乗法.py
+
 def main():
     st.title('最小二乗法の計算！')
     
@@ -33,9 +35,9 @@ def main():
                 y_input = st.text_input(f'Y{i+1}')
             
             # 入力が空でない場合にのみ浮動小数点数に変換し、リストに追加
-            if x_input.isdigit() and x_input.strip() != '':
+            if x_input.replace('-', '').replace('.', '', 1).isdigit() and x_input.strip() != '':
                 x_data.append(float(x_input))
-            if y_input.isdigit() and y_input.strip() != '':
+            if y_input.replace('-', '').replace('.', '', 1).isdigit() and y_input.strip() != '':
                 y_data.append(float(y_input))
         
         x_canuse = len(x_data) == data_count and x_data
